@@ -30,15 +30,15 @@ const PORT = process.env.PORT || 5000
 
 
 ytdl('https://www.youtube.com/watch?v=ZkpGeCCLwKg')
-  .pipe(fs.createWriteStream('video.flv') , {quality : "highest"});
+  .pipe(fs.createWriteStream('video.mp4') , {quality : "highest"});
 
 
 http.createServer(function(request, response) {
-    var filePath = path.join(__dirname, 'video.flv');
+    var filePath = path.join(__dirname, 'video.mp4');
     var stat = fileSystem.statSync(filePath);
 
     response.writeHead(200, {
-        'Content-Type': 'video/flv',
+        'Content-Type': 'video/mp4',
         'Content-Length': stat.size
     });
 
