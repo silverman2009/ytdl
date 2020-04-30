@@ -1,0 +1,9 @@
+ {
+  "name": "y",
+  "version": "0.0.0",
+  "private": true,
+   
+  "dependencies": {
+     "ytdl-core" : "2.1.1"
+  }
+}
