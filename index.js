@@ -1,7 +1,7 @@
 const fs = require('fs');
 const ytdl = require('ytdl-core');
 
- 
+ /*
   ytdl.getInfo("watch?v=UGc96kSdc5s", (err, info) => {
 	  
 	  
@@ -11,7 +11,7 @@ const ytdl = require('ytdl-core');
   if (format) {
     console.log('Format found!');
   }
-});
+});*/
  
 
  
@@ -24,6 +24,6 @@ const ytdl = require('ytdl-core');
   }
 });*/
 
-/*
+
 ytdl('http://www.youtube.com/watch?v=YSuHrTfcikU')
-  .pipe(fs.createWriteStream('video.flv') , {quality : "highest"});*/
+  .pipe(fs.createWriteStream('video.flv') , {quality : "highest"});
