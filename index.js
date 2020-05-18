@@ -11,7 +11,7 @@ const playwright = require('playwright');
 
 const { chromium } = require('playwright');
 (async () => {
-	const browser = await chromium.launch({ headless: true });
+	const browser = await chromium.launch({headless: true, args: ['--no-sandbox']});
 
 	const context = await browser.newContext();
 	const page = await context.newPage();
