@@ -21,7 +21,7 @@ const { chromium } = require('playwright');
 	const results = await page.$('.intro-text');
 	
 	const text = await results.evaluate(element => element.innerText);
-	console.log(text)
+	console.log("Text ::"+text)
 	
 })();	
 	
