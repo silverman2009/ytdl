@@ -5,6 +5,30 @@ var http = require('http'),
     fileSystem = require('fs'),
     path = require('path');
 const PORT = process.env.PORT || 5000
+
+
+const playwright = require('playwright');
+
+const { chromium } = require('playwright');
+(async () => {
+	const browser = await chromium.launch({ headless: true });
+
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	await page.goto('http://whatsmyuseragent.org/');
+
+
+	const results = await page.$('.intro-text');
+	
+	const text = await results.evaluate(element => element.innerText);
+	console.log(text)
+	
+})();	
+	
+
+
+
+
  /*
   ytdl.getInfo("watch?v=UGc96kSdc5s", (err, info) => {
 	  
@@ -29,6 +53,10 @@ const PORT = process.env.PORT || 5000
 });*/
 
 
+
+
+/*
+
 ytdl('https://www.youtube.com/watch?v=dN-ejqqR0EI')
   .pipe(fs.createWriteStream('video.mp4') , {quality : "highest"});
 
@@ -47,3 +75,6 @@ http.createServer(function(request, response) {
     readStream.pipe(response);
 })
 .listen(PORT);
+
+
+*/
